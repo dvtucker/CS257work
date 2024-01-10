@@ -1,3 +1,5 @@
 pool
 sewing
 painting
+fishing
+shopping
