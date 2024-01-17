@@ -10,5 +10,5 @@ CREATE TABLE earthquakes (
   id text,
   place text,
   quaketype text,
-  quakestatus text,
+  quakestatus text
 );
