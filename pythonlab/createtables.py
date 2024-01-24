@@ -4,16 +4,16 @@ import psycopg2
 def create_tables():
     """ create tables in the PostgreSQL database"""
     command1 = """CREATE TABLE cities (
-            cityName SERIAL PRIMARY KEY,
-            stateName VARCHAR(255) NOT NULL,
-            cityPopulation int(255) NOT NULL,
-            latitude real(255) NOT NULL,
-            longitude real(255) NOT NULL
+            cityName text,
+            stateName text NOT NULL,
+            cityPopulation int NOT NULL,
+            latitude real NOT NULL,
+            longitude real NOT NULL
         )"""
 
     command2 = """CREATE TABLE stateAbb (
-            abbreviation SERIAL PRIMARY KEY,
-            stateName VARCHAR(255) NOT NULL
+            abbreviation text,
+            stateName text NOT NULL
         )"""
     
 
