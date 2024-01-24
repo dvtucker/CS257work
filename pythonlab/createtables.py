@@ -4,18 +4,18 @@ from config import config
 
 def create_tables():
     """ create tables in the PostgreSQL database"""
-    command1 = "CREATE TABLE cities (
+    command1 = """CREATE TABLE cities (
             cityName SERIAL PRIMARY KEY,
             stateName VARCHAR(255) NOT NULL,
             cityPopulation int(255) NOT NULL,
             latitude real(255) NOT NULL,
             longitude real(255) NOT NULL
-        )"
+        )"""
 
-    command2 = "CREATE TABLE stateAbb (
+    command2 = """CREATE TABLE stateAbb (
             abbreviation SERIAL PRIMARY KEY,
             stateName VARCHAR(255) NOT NULL
-        )"
+        )"""
     
 
     conn = None
