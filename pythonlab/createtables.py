@@ -4,21 +4,20 @@ from config import config
 
 def create_tables():
     """ create tables in the PostgreSQL database"""
-    commands = (
-        
-        CREATE TABLE cities (
+    command1 = "CREATE TABLE cities (
             cityName SERIAL PRIMARY KEY,
             stateName VARCHAR(255) NOT NULL,
             cityPopulation int(255) NOT NULL,
             latitude real(255) NOT NULL,
             longitude real(255) NOT NULL
-        )
-        ,
-         CREATE TABLE stateAbb (
+        )"
+
+    command2 = "CREATE TABLE stateAbb (
             abbreviation SERIAL PRIMARY KEY,
             stateName VARCHAR(255) NOT NULL
-        )
-        )
+        )"
+    
+
     conn = None
     try:
         # read the connection parameters
@@ -27,8 +26,8 @@ def create_tables():
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
         # create table one by one
-        for command in commands:
-            cur.execute(command)
+        cur.execute(command1)
+        cur.execute(command2)
         # close communication with the PostgreSQL database server
         cur.close()
         # commit the changes
