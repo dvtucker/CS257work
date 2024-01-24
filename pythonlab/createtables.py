@@ -7,14 +7,17 @@ def create_tables():
     commands = (
         
         CREATE TABLE cities (
-            vendor_id SERIAL PRIMARY KEY,
-            vendor_name VARCHAR(255) NOT NULL
+            cityName SERIAL PRIMARY KEY,
+            stateName VARCHAR(255) NOT NULL,
+            cityPopulation int(255) NOT NULL,
+            latitude real(255) NOT NULL,
+            longitude real(255) NOT NULL
         )
         ,
          CREATE TABLE stateAbb (
-                part_id SERIAL PRIMARY KEY,
-                part_name VARCHAR(255) NOT NULL
-                )
+            abbreviation SERIAL PRIMARY KEY,
+            stateName VARCHAR(255) NOT NULL
+        )
         )
     conn = None
     try:
