@@ -115,10 +115,12 @@ def test_query_five():
     state_name = input("Enter a state: ")
 
     # If input is an abbreviation, look up the full state name
-    if len(state_name) == 2:
+     if len(state_name) == 2:
         state_name = state_name.upper()  # Convert to uppercase 
         cur.execute("SELECT stateName FROM stateAbb WHERE abbreviation='" + state_name + "';")
-        state_name = cur.fetchone()[0]
+        state_result = cur.fetchone()
+        if state_result is not None:
+            state_name = state_result[0]
 
     # get the city population for the specified state
     cur.execute("SELECT cityPopulation FROM cities WHERE stateName='" + state_name + "';")
