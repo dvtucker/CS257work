@@ -13,7 +13,7 @@ def create_tables():
 
     command2 = """CREATE TABLE stateAbb (
             stateName text NOT NULL,
-            abbreviation text,
+            abbreviation text
         )"""
     
 
