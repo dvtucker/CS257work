@@ -122,19 +122,15 @@ def test_query_five():
         if state_result is not None:
             state_name = state_result[0]
 
-    # get the city population for the specified state
-    cur.execute("SELECT cityPopulation FROM cities WHERE stateName='" + state_name + "';")
+    # get the total city population for the state
+    cur.execute("SELECT SUM(cityPopulation) FROM cities WHERE stateName='" + state_name + "';")
     
-    total = 0  # store the total population
+    total_pop = cur.fetchone()[0]
 
-    # Loop through results and calculate the total population
-    while True:
-        city = cur.fetchone() 
-        if city is None:
-            break  
-        total += city[0]  
-
-    print(total)
+    if total_pop is not None:
+        print("The total population is:", total_pop)
+    else:
+        print("State not found")
 
 test_query_one()
 test_query_two()
