@@ -21,8 +21,6 @@ def test_query_one():
     else:
         print(result)
 
-    conn.close()
-
 def test_query_two():
 
     conn = psycopg2.connect(
@@ -41,8 +39,6 @@ def test_query_two():
     result = cur.fetchone()
     print("The city with the largest population is: ")
     print(result)
-
-    conn.close()
 
 
 def test_query_three():
@@ -63,9 +59,6 @@ def test_query_three():
     result = cur.fetchone()
     print("The city in Minnesota with the smallest population is: ")
     print(result)
-
-    conn.close()
-
 
 def test_query_four():
 
@@ -105,8 +98,6 @@ def test_query_four():
     result = cur.fetchone()
     print("The city that is furthest East is: ")
     print(result)
-
-    conn.close()
 
 
 def test_query_five(stateName):
