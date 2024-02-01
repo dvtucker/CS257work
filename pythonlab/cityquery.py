@@ -133,4 +133,4 @@ def test_query_five():
 
     print(total)
 
-    conn.close()
+   
