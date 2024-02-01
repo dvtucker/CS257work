@@ -100,7 +100,7 @@ def test_query_four():
     print(result)
 
 
-def test_query_five(stateName):
+def test_query_five():
 
     conn = psycopg2.connect(
         host="localhost",
