@@ -115,7 +115,7 @@ def test_query_five():
     state_name = input("Enter a state: ")
 
     # If input is an abbreviation, look up the full state name
-     if len(state_name) == 2:
+    if len(state_name) == 2:
         state_name = state_name.upper()  # Convert to uppercase 
         cur.execute("SELECT stateName FROM stateAbb WHERE abbreviation='" + state_name + "';")
         state_result = cur.fetchone()
