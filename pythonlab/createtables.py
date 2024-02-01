@@ -12,8 +12,8 @@ def create_tables():
         )"""
 
     command2 = """CREATE TABLE stateAbb (
-            abbreviation text,
             stateName text NOT NULL
+            abbreviation text,
         )"""
     
 
