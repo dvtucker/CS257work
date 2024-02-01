@@ -118,7 +118,7 @@ def test_query_five():
     if len(state_name) == 2:
         state_name = state_name.upper()  # Convert to uppercase 
         cur.execute("SELECT stateName FROM stateAbb WHERE abbreviation='" + state_name + "';")
-        state_name = cur.fetchone()[0]
+        state_name = cur.fetchone()[1]
 
     # get the city population for the specified state
     cur.execute("SELECT cityPopulation FROM cities WHERE stateName='" + state_name + "';")
@@ -134,5 +134,9 @@ def test_query_five():
 
     print(total)
 
-    
+test_query_one()
+test_query_two()
+test_query_three()
+test_query_four()
+test_query_five()
    
