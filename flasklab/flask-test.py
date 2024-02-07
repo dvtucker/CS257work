@@ -1,4 +1,5 @@
 import flask
+import psycopg2
 
 app = flask.Flask(__name__)
 
@@ -25,7 +26,7 @@ def my_sum(num1, num2):
 
 @app.route('/pop/<abbrev>')
 def state_pops(abbrev):
-
+    
     conn = psycopg2.connect(
         host="localhost",
         port=5136,
