@@ -17,7 +17,7 @@ def my_color(word1):
     return '<h1 style="color:Red">' + word1 + '</h1>'
 
 @app.route('/add/<num1>/<num2>')
-def my_display(num1, num2):
+def my_sum(num1, num2):
     the_sum = num1 + num2
     return the_sum
 
