@@ -23,6 +23,26 @@ def my_sum(num1, num2):
     the_sum = num1 + num2
     return str(the_sum)
 
+@app.route('/pop/<abbrev>')
+def state_pops(abbrev):
+
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5136,
+        database="tuckerd",
+        user="tuckerd",
+        password="carpet664winter")
+
+    cur = conn.cursor()
+
+    abbr = abbrev
+    sql = "SELECT state_population FROM state_table WHERE abbreviation = '" + abbr + "';"
+    
+    cur.execute( sql )
+    result = cur.fetchone()
+
+    return result
+
 if __name__ == '__main__':
     my_port = 5136
     app.run(host='0.0.0.0', port = my_port) 
