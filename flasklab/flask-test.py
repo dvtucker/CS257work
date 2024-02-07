@@ -18,8 +18,10 @@ def my_color(word1):
 
 @app.route('/add/<num1>/<num2>')
 def my_sum(num1, num2):
+    num1 = int(num1)
+    num2 = int(num2)
     the_sum = num1 + num2
-    return the_sum
+    return str(the_sum)
 
 if __name__ == '__main__':
     my_port = 5136
