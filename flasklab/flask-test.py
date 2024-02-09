@@ -40,7 +40,7 @@ def state_pops(abbrev):
     sql = "SELECT state_population FROM state_table WHERE abbreviation = '" + abbr + "';"
     
     cur.execute( sql )
-    result = cur.fetchone()
+    result = str(cur.fetchone())
 
     return result
 
