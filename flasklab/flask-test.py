@@ -29,7 +29,7 @@ def state_pops(abbrev):
     
     conn = psycopg2.connect(
         host="localhost",
-        port=5136,
+        port=5432,
         database="tuckerd",
         user="tuckerd",
         password="carpet664winter")
