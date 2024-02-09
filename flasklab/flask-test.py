@@ -45,6 +45,8 @@ def state_pops(abbrev):
     for row in rows:
         sum += rows
 
+    cur.close()
+
 
     return '<h1 style="color:Red">' + str(sum) + '</h1>'
 
