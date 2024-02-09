@@ -40,8 +40,10 @@ def state_pops(abbrev):
     sql = "SELECT state_population FROM state_table WHERE abbreviation = '" + abbr + "';"
     
     cur.execute( sql )
-    row = cur.fetchone()
-    sum += row
+    rows = cur.fetchall()
+    
+    for row in rows:
+        sum += rows
 
 
     return '<h1 style="color:Red">' + str(sum) + '</h1>'
