@@ -41,7 +41,7 @@ def state_pops(abbrev):
     
     cur.execute( sql )
     rows = cur.fetchall()
-    
+    sum=0
     for row in rows:
         sum += rows
 
