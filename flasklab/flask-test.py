@@ -22,7 +22,7 @@ def my_sum(num1, num2):
     num1 = int(num1)
     num2 = int(num2)
     the_sum = num1 + num2
-    return str(the_sum)
+    return '<h1 style="color:Red">' + str(the_sum) + '</h1>'
 
 @app.route('/pop/<abbrev>')
 def state_pops(abbrev):
@@ -42,7 +42,7 @@ def state_pops(abbrev):
     cur.execute( sql )
     result = str(cur.fetchone())
 
-    return result
+    return '<h1 style="color:Red">' + result + '</h1>'
 
 if __name__ == '__main__':
     my_port = 5136
