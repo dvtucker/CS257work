@@ -40,15 +40,9 @@ def state_pops(abbrev):
     sql = "SELECT state_population FROM state_table WHERE abbreviation = '" + abbr + "';"
     
     cur.execute( sql )
-    rows = cur.fetchall()
-    sum=0
-    for row in rows:
-        sum += rows
+    result = str(cur.fetchone())
 
-    cur.close()
-
-
-    return '<h1 style="color:Red">' + str(sum) + '</h1>'
+    return '<h1 style="color:Red">' + result + '</h1>'
 
 if __name__ == '__main__':
     my_port = 5136
