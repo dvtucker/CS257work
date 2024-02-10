@@ -9,7 +9,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("index2.html")
 
-@app.route('/getName')
+@app.route('/randomName')
 def getName():
     conn = psycopg2.connect(
         host="localhost",
@@ -22,7 +22,7 @@ def getName():
     sql = "SELECT person_name FROM names_adjectives_table"
     cur.execute( sql )
     result = cur.fetchall()
-    rand_name = result(random.randint(0,7))
+    rand_name = result[random.randint(0,7)]
     rand_year = random.randint(1800, 2024)
     return render_template("random2.html", name = rand_name, year = rand_year)
 
