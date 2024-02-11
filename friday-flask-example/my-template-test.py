@@ -25,7 +25,7 @@ def getName():
     row = []
     for r in result:
         row.append(r[0])
-    rand_name = str(r[random.randint(0,7)])
+    rand_name = str(row[random.randint(0,7)])
     rand_year = random.randint(1800, 2024)
     return render_template("random2.html", name = rand_name, year = rand_year)
 
