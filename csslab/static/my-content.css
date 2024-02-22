@@ -1,0 +1,14 @@
+.my-class{
+  text-align: center;
+  color: darkmagenta;
+}
+
+.center-para{
+  text-align: center;
+  margin-top: 20px;
+  color: mediumaquamarine;
+}
+
+.big-button{
+  font-size: large;
+}
