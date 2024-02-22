@@ -5,12 +5,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    message = "Click the buttom below to generate a random number"
+    message = "Click the buttom below to generate a random number between 0 and 100"
     return render_template("my-homepage.html", someText = message)
 
 @app.route('/randnum')
 def getNumber():
-    randnum = randint()
+    randnum = randint(0,100)
     return render_template("numberpage.html", randnum)
 
 
