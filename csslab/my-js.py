@@ -10,8 +10,8 @@ def welcome():
 
 @app.route('/randnum')
 def getNumber():
-    randnum = random.randint(0,100)
-    return render_template("numberpage.html", randnum)
+    num = random.randint(0,100)
+    return render_template("numberpage.html", randnum = num)
 
 
 if __name__ == '__main__':
